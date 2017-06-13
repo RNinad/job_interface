@@ -8,7 +8,7 @@ from django.db import models
 class Company(models.Model):
 	username= models.CharField(max_length=20)
 	password= models.CharField(max_length=20)
-	email_address= models.CharField(max_length=40)
+	email= models.CharField(max_length=40)
 	sector= models.CharField(max_length=20)
 	registration_no= models.CharField(max_length=30)
 	website= models.CharField(max_length=40)
@@ -21,7 +21,7 @@ class Company(models.Model):
 class Applicant(models.Model):
 	username= models.CharField(max_length=20)
 	password= models.CharField(max_length=20)
-	email_address= models.CharField(max_length=40)
+	email= models.CharField(max_length=40)
 	DOB= models.CharField(max_length=12)
 	gender= models.CharField(max_length=7)
 	broad_qualification= models.CharField(max_length=10)

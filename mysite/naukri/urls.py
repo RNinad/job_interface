@@ -10,4 +10,6 @@ urlpatterns = [
 	url(r'^apply/$', views.apply, name= 'apply'),
 	url(r'^submit_application/$', views.submitApplication, name= 'submitapp'),
 	url(r'^status/$', views.dispStatus, name= 'status'),
+	url(r'^login/$', views.login, name='login'),
+	url(r'^signup/$', views.signup, name='signup'),
 ]
