@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Status{% endblock %}
+
+{% block content %}
+<hr>
+<h2>Status of your applications</h2>
+<ul class="list-group">
+    {% for application in user.applications %}
+    <li class="list-group-item">
+        {{application.company.name}}    <br>
+        {{application.department}}      <br>
+        {{application.sector}}          <br>
+        {{application.status}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

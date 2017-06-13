@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Submit applications{% endblock %}
+
+{% block content %}
+<hr>
+<h2>Submit Applications</h2>
+<p> Please select the preferred jobs 
+<form action="../status" method="post">
+    <ul class="list-group">
+    {% for job in jobs %}
+    <li class="list-group-item">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">
+                <p>{{job.company.name}}</p>
+            </label>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+    <input type="submit" value="Submit" />
+{% endblock %}
