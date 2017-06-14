@@ -3,16 +3,13 @@
 {% block title %}Naukri home{% endblock %}
 
 {% block content %}
-	{% if user_type == 'company' %}
+	{% if utype == 'company' %}
 		 <a href="/naukri/create_jobs" class="btn btn-info" style="margin-right: 30px">Create jobs</a>
-		 <a href={{djobs}} class="btn btn-info" style="margin-right: 30px">View existing jobs</a>
+		 <a href="{{djobs}}" class="btn btn-info" style="margin-right: 30px">View existing jobs</a>
 		 <a href="#" class="btn btn-info" style="margin-right: 30px">View applications</a> 
-	{% elif user_type == 'applicant' %}
+	{% elif utype == 'applicant' %}
 		<a href="../apply" class="btn btn-info" style="margin-right: 30px">Apply</a>
 		<a href="#" class="btn btn-info" style="margin-right: 30px">Status</a>
-
-	{% else %}
-
 	{% endif %}
 {% endblock %}
 

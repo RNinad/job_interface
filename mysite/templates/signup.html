@@ -1,102 +1,100 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Signup{% endblock %}
 
 {% block content %}
-	<h2>Login</h2>
-	<!--form for company starts-->
-	<form action= "../signup" method="post">
-	{% csrf_token %}<br>
-		
- 		
- 		<div class="form-group">
-			<label for="cusername"> Username</label>
-			<input type= "text" name= "username" id="cusername" class="form-control"><br>
-		</div>
+	<h2>Signup</h2>
 
-		<div class="form-group">
-			<label for="cpassword"> Password</label>
-			<input type= "password" name= "password" id="cpassword" class= "form-control"><br>
-		</div>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#applicant">Applicant</a></li>
+  <li><a data-toggle="tab" href="#company">Company</a></li>
+</ul>
 
-		<div class="form-group">
-			<label for="cemail"> Email</label>
-			<input type= "email" name= "email" id="cemail" class="form-control"><br>
-		</div>
-
-		<div class="form-group">
-			<select>
-
-			</select>
-		</div>
-
-
-		<div class="form-group">
-			<label for="registration_no"> Registration No.</label>
-			<input type= "text" name= "registration_no" id="registration_no" class="form-control"><br>
-		</div>
-
-		<div class="form-group">
-			<label for="website"> Website</label>
-			<input type= "url" name= "website" id="website" class="form-control"><br>
-		</div>
-
-		<div class="form-group">
-			<label for="phone_no"> Phone No.</label>
-			<input type= "tel" name= "phone_no" id="phone_no" class="form-control"><br>
-		</div>
-
-
-
-
-	</form>
-
-<!-- form for company ends here -->
-
-
-
-<!-- form for applicant starts here -->
-
-	<form action= "../signup" method="post">
-	{% csrf_token %}<br>
-
-
+<div class="tab-content container-fluid" style="padding: 15px;">
+  	<div id="applicant" class="tab-pane fade in active">
+    <!-- form for applicant starts here -->
+		<form action= "../asignup/" method="post">
+		{% csrf_token %}
 		<div class="form-group">
 			<label for="username"> Username</label>
-			<input type= "text" name= "username" id="username" class="form-control"><br>
+			<input type= "text" name= "username" id="username" class="form-control" required><br>
 		</div>
-
 		<div class="form-group">
 			<label for="password"> Password</label>
-			<input type= "password" name= "password" id="password" class="form-control"><br>
+			<input type= "password" name= "password" id="password" class="form-control" required><br>
 		</div>
-
 		<div class="form-group">
 			<label for="email"> Email</label>
-			<input type= "email" name= "email" id="email" class="form-control"><br>
+			<input type= "email" name= "email" id="email" class="form-control"  required><br>
 		</div>
-
 		<div class="form-group">
 			<label for="date"> DOB</label>
-			<input type= "date" name= "date" id="date" class="form-control"><br>
+			<input type= "date" name= "date" id="date" class="form-control" required><br>
 		</div>
-
 		<div class="form-group">
 			<label for="gender"> Gender</label>
-			<input type= "text" name= "gender" id="gender" class="form-control"><br>
+				<select id="gender" class="form-control" name="gender" required>
+					<option>Male</option>
+					<option>Female</option>
+				</select><br>
 		</div>
-
 		<div class="form-group">
-			<label for="qual"> Broad Qualification</label>
-			<input type= "text" name= "qual" id="qual" class="form-control"><br>
+			<label for="qual">Qualification</label>
+			<input type= "text" name= "qual" id="qual" class="form-control" required><br>
 		</div>
-
 		<div class="form-group">
 			<label for="mobile"> Mobile No.</label>
-			<input type= "tel" name= "mobile" id="mobile" class="form-control"><br>
+			<input type= "tel" name= "mobile" id="mobile" class="form-control" required><br>
 		</div>
-
-
+		<div class="form-group">
+			<input type="submit" class="btn btn-default" name="usubmit" value="Submit">			
+		</div>
 		</form>
+		<!-- form for aplicant ends here -->
+  	</div>
+  	
+  	<div id="company" class="tab-pane fade">
+	<!--form for company starts-->
+		<form action= "../csignup/" method="post">
+		{% csrf_token %}<br>
+	 		<div class="form-group">
+				<label for="cusername"> Username</label>
+				<input type= "text" name= "username" id="cusername" class="form-control" required><br>
+			</div>
+			<div class="form-group">
+				<label for="cpassword"> Password</label>
+				<input type= "password" name= "password" id="cpassword" class= "form-control" required><br>
+			</div>
+			<div class="form-group">
+				<label for="cemail"> Email</label>
+				<input type= "email" name= "email" id="cemail" class="form-control" required><br>
+			</div>
 
-<!-- form for aplicant ends here -->
+			<div class="form-group">
+				<label for="sector">Sector:</label>
+				<select id="sector" class="form-control" name="sector" required>
+					{% for sector in sectors %}
+						<option>{{sector}}</option>
+					{% endfor%}
+				</select><br>
+			</div>
+			<div class="form-group">
+				<label for="registration_no"> Registration No.</label>
+				<input type= "text" name= "registration_no" id="registration_no" class="form-control" required><br>
+			</div>
+			<div class="form-group">
+				<label for="website"> Website</label>
+				<input type= "url" name= "website" id="website" class="form-control" required><br>
+			</div>
+			<div class="form-group">
+				<label for="phone_no"> Phone No.</label>
+				<input type= "tel" name= "phone_no" id="phone_no" class="form-control" required><br>
+			</div>
+			<div class="form-group">
+			<input type="submit" class="btn btn-default" name="csubmit" value="Submit">			
+		</div>
+		</form>
+		<!-- form for company ends here -->
+ 	</div>
+</div>
+{% endblock %}

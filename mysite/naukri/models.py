@@ -9,7 +9,7 @@ class Company(models.Model):
 	username= models.CharField(max_length=20)
 	password= models.CharField(max_length=20)
 	email= models.CharField(max_length=40)
-	sector= models.CharField(max_length=20)
+	sector= models.CharField(max_length=100)
 	registration_no= models.CharField(max_length=30)
 	website= models.CharField(max_length=40)
 	phone_no= models.CharField(max_length=13)

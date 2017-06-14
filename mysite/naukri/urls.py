@@ -12,4 +12,7 @@ urlpatterns = [
 	url(r'^status/$', views.dispStatus, name= 'status'),
 	url(r'^login/$', views.login, name='login'),
 	url(r'^signup/$', views.signup, name='signup'),
+	url(r'^asignup/$', views.applicant_signUpHandler),
+	url(r'^csignup/$', views.company_signUpHandler),
+	url(r'^home/$', views.logInHandler),
 ]

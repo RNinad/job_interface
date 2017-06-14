@@ -4,25 +4,18 @@
 
 {% block content %}
 	<h2>Login</h2>
-	<form action= "../login" method="post">
-		{% csrf_token %}<br>
-			<div class="form-group">
-				<label for="Company"> Company</label>
-				<input type="radio" name="chooseone" id="Company" class="form-control"><br>
-			</div>
-			<div class="form-group">
-				<label for="Applicant"> Applicant</label>
-				<input type="radio" name="chooseone" id="Applicant" class="form-control"><br>
-			</div>
+	<form action= "../home/" method="post">
+	{% csrf_token %}<br>
+			<label class="radio-inline" for="Company"><input type="radio" name="utype" id="Company" value="company" required>Company</label><br>
+			<label class="radio-inline" for="Applicant"><input type="radio" name="utype" id="Applicant" value="applicant" required>Applicant</label><br>
 			<div class="form-group">
 				<label for="email"> Email</label>
-				<input type= "text" name= "email" id="email" class="form-control"><br>
+				<input type= "text" name= "email" id="email" class="form-control" required><br>
 			</div>
 			<div class="form-group">
 				<label for="Password"> Password</label>
-				<input type= "password" name= "password" id="Password"class="form-control" class="form-control"><br>
+				<input type= "password" name= "password" id="Password"class="form-control" class="form-control" required><br>
 			</div>
-
-		
+			<input type="submit" value="Log in">
 	</form>
 {% endblock %}
