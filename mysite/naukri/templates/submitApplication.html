@@ -5,19 +5,26 @@
 {% block content %}
 <hr>
 <h2>Submit Applications</h2>
+{% if jobs %}
 <p> Please select the preferred jobs 
-<form action="../status" method="post">
+<form action="../application_creator/" method="post">
+{% csrf_token %}
     <ul class="list-group">
     {% for job in jobs %}
     <li class="list-group-item">
         <div class="checkbox">
             <label>
-                <input type="checkbox">
-                <p>{{job.company.name}}</p>
+                <input type="checkbox" name="joblist[]" value="{{job.company_providing_job.username}}">
+                <p>{{job.company_providing_job.username}}</p>
             </label>
+
         </div>
     </li>
     {% endfor %}
     </ul>
     <input type="submit" value="Submit" />
+</form>
+{% else %}
+<p class="danger">No jobs found</p>
+{% endif %}
 {% endblock %}

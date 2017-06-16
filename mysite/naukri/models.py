@@ -32,7 +32,6 @@ class Applicant(models.Model):
 
 class Job(models.Model):
 	company_providing_job= models.ForeignKey(Company)
-	job_sector= models.CharField(max_length=20)
 	department= models.CharField(max_length=20)
 	qualifications= models.CharField(max_length=40)
 	experience= models.CharField(max_length=40)

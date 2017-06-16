@@ -5,11 +5,11 @@
 {% block content %}
 	{% if utype == 'company' %}
 		 <a href="/naukri/create_jobs" class="btn btn-info" style="margin-right: 30px">Create jobs</a>
-		 <a href="{{djobs}}" class="btn btn-info" style="margin-right: 30px">View existing jobs</a>
-		 <a href="#" class="btn btn-info" style="margin-right: 30px">View applications</a> 
+		 <a href="../display_jobs" class="btn btn-info" style="margin-right: 30px">View existing jobs</a>
+		 <a href="../applications" class="btn btn-info" style="margin-right: 30px">View applications</a> 
 	{% elif utype == 'applicant' %}
 		<a href="../apply" class="btn btn-info" style="margin-right: 30px">Apply</a>
-		<a href="#" class="btn btn-info" style="margin-right: 30px">Status</a>
+		<a href="../status" class="btn btn-info" style="margin-right: 30px">Status</a>
 	{% endif %}
 {% endblock %}
 

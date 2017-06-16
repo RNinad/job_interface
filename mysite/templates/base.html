@@ -9,11 +9,13 @@
 <body>
     <div class="container-fluid">
         <h1>JOB INTERFACE</h1>
+        {% block login%}
+        <a class="btn btn-link" style="float: right;" href="/naukri/">Logout</a>
+        {% endblock %}
         {% block content %}{% endblock %}
 
         {% block footer %}
         <hr>
-        <p>Thanks for visiting my site.</p>
         {% endblock %}
     </div>
 </body>

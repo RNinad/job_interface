@@ -1,21 +1,30 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<h2>Login</h2>
+			<form action= "../login/home/" method="post">
+			{% csrf_token %}<br>
+					<label class="radio-inline" for="Company"><input type="radio" name="utype" id="Company" value="company" required>Company</label><br>
+					<label class="radio-inline" for="Applicant"><input type="radio" name="utype" id="Applicant" value="applicant" required>Applicant</label><br>
+					<div class="form-group">
+						<label for="em"> Email</label>
+						<input type= "text" name= "uemail" id="em" class="form-control" required><br>
+					</div>
+					<div class="form-group">
+						<label for="Password"> Password</label>
+						<input type= "password" name= "password" id="Password"class="form-control" class="form-control" required><br>
+					</div>
+					<input type="submit" value="Log in">
+			</form>
+		</div>
+	</body>
+</html>
 
-{% block title %}Login{% endblock %}
 
-{% block content %}
-	<h2>Login</h2>
-	<form action= "../home/" method="post">
-	{% csrf_token %}<br>
-			<label class="radio-inline" for="Company"><input type="radio" name="utype" id="Company" value="company" required>Company</label><br>
-			<label class="radio-inline" for="Applicant"><input type="radio" name="utype" id="Applicant" value="applicant" required>Applicant</label><br>
-			<div class="form-group">
-				<label for="email"> Email</label>
-				<input type= "text" name= "email" id="email" class="form-control" required><br>
-			</div>
-			<div class="form-group">
-				<label for="Password"> Password</label>
-				<input type= "password" name= "password" id="Password"class="form-control" class="form-control" required><br>
-			</div>
-			<input type="submit" value="Log in">
-	</form>
-{% endblock %}

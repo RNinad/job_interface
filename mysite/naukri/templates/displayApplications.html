@@ -7,15 +7,20 @@
 <h2>Applications</h2>
 {% for department in departments%}
     <h3>{{department}}</h3>
+<form action="../home/" method="post">
+{% csrf_token%}
     <ul class="list-group">
 	{% for application in applications %}
 	<li class="list-group-item">
-    	<p>{{application.Applicant.username}}</p>
-        <div style="float:right" class="btn-group">
-            <button type="button" class="btn btn-success">Accept</button>
-            <button type="button" class="btn btn-danger">Reject</button>
+    	<p style="display: inline;">{{application.applicant.username}}</p>
+        <div style="float:right; display:inline;margin-top:-5px;" class="btn-group">
+               <label><input type="radio" name="status" value="Accept">Accept</label>
+               <label><input type="radio" name="status" value="Reject">Reject</label>
         </div>
     </li>
+    </ul>
+    <input type="submit" value="Submit">
+</form>
 	{% endfor %}
 {% endfor %}
 {% endblock %}
